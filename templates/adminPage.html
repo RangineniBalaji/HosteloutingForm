@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Outing Applicants</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Register Number</th>
+            <th>Room Number</th>
+            <th>Hostel</th>
+            <th>Leaving Time</th>
+            <th>Return Time</th>
+            <th>Reason</th>
+        </tr>
+        {% for user_detail in user_details %}
+            <tr>
+                <td>{{ user_detail.id }}</td>
+                <td>{{ user_detail.name }}</td>
+                <td>{{ user_detail.register_number }}</td>
+                <td>{{ user_detail.room_number }}</td>
+                <td>{{ user_detail.hostel }}</td>
+                <td>{{ user_detail.leaving_time }}</td>
+                <td>{{ user_detail.return_time }}</td>
+                <td>{{ user_detail.reason }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
